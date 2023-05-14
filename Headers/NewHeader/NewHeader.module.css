@@ -1,0 +1,241 @@
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 40px;
+    margin: 20px 20px 0 20px;
+    background-color: rgb(29, 29, 29);
+    border-radius: 20px;
+    z-index: 100;
+}
+
+.visible {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+.hidden {
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(-100%);
+}
+
+
+.logo img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.search-ico {
+    margin-top: 5px;
+    height: 30px;
+    margin-left: 35px;
+}
+
+.search-box {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.header-main {
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.search-input {
+    margin-top: 4px;
+    margin-left: 4px;
+    border: 0;
+    color: white;
+    border-radius: 20px;
+    background-color: #262626;
+    width: 100%;
+    height: 33px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Readex Pro', sans-serif;
+}
+
+.search-input:focus {
+    font-family: 'Readex Pro', sans-serif;
+    border-color: #bdbdbd;
+    outline: 0;
+}
+
+.filter-btn {
+    margin: 4px 0 0 46px;
+    border: 0;
+    color: white;
+    border-radius: 33px;
+    background-color: #262626;
+    font-family: 'Readex Pro', sans-serif;
+    font-size: 14px;
+    height: 33px;
+    max-width: 116px;
+    min-width: 116px;
+}
+.filter-btn:hover {
+    cursor: pointer;
+}
+
+.burger-ico {
+    display: flex;
+    align-content: center;
+    margin: 8px 40px 0 46px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* CSS-код для бургер меню */
+.menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    min-width: 35%;
+    height: 100%;
+    background-color: rgba(16, 16, 16, 0.95);
+    backdrop-filter: blur(5px);
+    box-shadow: -0.4em 0 0.4em rgba(14, 14, 14, 0.95);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+.menu-item {
+    font-family: 'Readex Pro', sans-serif;
+    color: white;
+    font-size: 24px;
+    margin-bottom: 40px;
+    margin-left: 35px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.menu-item:hover {
+    color: #FF005C;
+}
+
+
+#menu__toggle {
+    opacity: 0;
+}
+
+#menu__toggle:checked~.menu__btn>span {
+    transform: rotate(45deg);
+}
+
+#menu__toggle:checked~.menu__btn>span::before {
+    top: 0;
+    transform: rotate(0);
+}
+
+#menu__toggle:checked~.menu__btn>span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+
+#menu__toggle:checked~.menu__box {
+    visibility: visible;
+    left: 0;
+}
+
+
+
+.menu__btn {
+    display: flex;
+    align-items: center;
+    position: fixed;
+
+    width: 33px;
+    height: 23px;
+
+    cursor: pointer;
+    z-index: 3;
+}
+
+.menu__btn>span,
+.menu__btn>span::before,
+.menu__btn>span::after {
+    display: block;
+    position: absolute;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #ffffff;
+
+    transition-duration: .25s;
+}
+
+.menu__btn>span::before {
+    content: '';
+    top: -8px;
+}
+
+.menu__btn>span::after {
+    content: '';
+    top: 8px;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .header {
+        padding: 20px 20px;
+    }
+
+    .search-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-left: 10px;
+    }
+
+    .search-ico {
+        display: none;
+    }
+
+    .search-input {
+        margin-top: 20px;
+        margin-left: 4px;
+        max-width: none;
+    }
+
+    .filter-btn {
+        margin: 20px 0 0 20px;
+        max-width: none;
+        min-width: 100px;
+    }
+
+
+    .burger-ico {
+        margin: 24px 20px 0 20px;
+    }
+
+    .menu {
+        min-width: 100%;
+        padding-right: 20px;
+        align-items: flex-end;
+
+    }
+
+    .menu-item {
+        font-size: 25px;
+        margin-bottom: 25px;
+    }
+}

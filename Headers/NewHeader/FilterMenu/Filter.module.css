@@ -1,0 +1,32 @@
+.selector-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.selector {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.search-btn{
+    height: 36px;
+    padding: 0;
+    margin: 2px;
+    min-width: 120px;
+    font-size: 16px;
+    border-radius: 1px;
+    cursor: pointer;
+    color: #888888;
+    background: #262626;
+    border-color: rgba(144, 233, 255, 0);
+    font-style: normal;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .selector-row{
+        flex-direction: column;
+    }
+}
